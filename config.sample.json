@@ -10,6 +10,7 @@
     ]
   },
   "twitter": {
+    "callback_root": "http://localhost:8002",
     "key": "",
     "secret": ""
   }

@@ -36,7 +36,7 @@ passport.use(
   new TwitterStrategy({
     consumerKey: config.twitter.key,
     consumerSecret: config.twitter.secret,
-    callbackURL: "http://localhost:8002/auth/twitter/callback"
+    callbackURL: config.twitter.callback_root + "/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     db.findOrCreateUser(profile.id, function(err, user) {
