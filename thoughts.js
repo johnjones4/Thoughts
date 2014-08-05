@@ -111,7 +111,6 @@ app.post('/thought', function(req,res) {
           console.log(e);
         }
       }
-      console.log(thought);
 
       db.logThought(req.user,thought,ispublic,category,function(err,thought) {
         if (thought) {
