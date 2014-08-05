@@ -9,7 +9,6 @@ var TwitterStrategy = require('passport-twitter').Strategy;
 var MemcachedStore = require('connect-memcached')(session);
 var http = require('http');
 var jade = require('jade');
-var YAML = require('yamljs');
 
 
 var db = new Database();
@@ -92,26 +91,6 @@ app.post('/thought', function(req,res) {
       var ispublic = false;
       var category = 'default';
       var thought = req.body.thought.replace('\r\n','\n').replace('\n\r','\n').replace('\r','');
-
-      var br = thought.indexOf('\n===\n');
-      if (br > 0) {
-        try {
-          var yaml = thought.substring(0,br);
-          var obj = YAML.parse(yaml);
-          if (obj) {
-            if (obj['public']) {
-              ispublic = obj['public'];
-            }
-            if (obj.category) {
-              category = obj.category;
-            }
-            thought = thought.substr(br+5,thought.length);
-          }
-        } catch (e) {
-          console.log(e);
-        }
-      }
-
       db.logThought(req.user,thought,ispublic,category,function(err,thought) {
         if (thought) {
           getQuote(function(quote) {

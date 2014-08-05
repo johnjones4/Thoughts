@@ -12,7 +12,6 @@
     "passport-twitter": "*",
     "sqlite3": "*",
     "connect-memcached": "*",
-    "markdown": "*",
-    "yamljs": "*"
+    "markdown": "*"
   }
 }
