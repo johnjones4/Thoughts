@@ -1,0 +1,14 @@
+article(class='thought', id=thought.rowid)
+  div(class='meta') 
+    span(class='timestamp') #{thought.created_formatted}
+    span(class='public') 
+      if (thought.public)
+        | Public
+      else
+        | Private
+    if (thought.category && thought.category != 'default')
+      span(class='category') #{thought.category}
+  nav(class='links')
+    a(href='/thought/'+thought.rowid) Permalink
+    a(href='/thought/'+thought.rowid+'/download') Markdown
+  div(class='content markdown') !{thought.thought_formatted}

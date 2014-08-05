@@ -1,0 +1,4 @@
+*.sqlite3
+.sass-cache
+config.json
+node_modules

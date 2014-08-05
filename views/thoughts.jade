@@ -1,0 +1,9 @@
+extends main
+
+block content
+  form(method='post',action='/thought',class='thought-form')
+    textarea(name='thought',placeholder=quote,noresize="noresize")
+    input(type='submit', value='Save', class='button')
+  section(class='thoughts')
+    each thought in thoughts
+      include ./thought.jade

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Thoughts_
+    meta(name = 'viewport', content = 'width=device-width, user-scalable=no')
+    link(rel = 'stylesheet', href = 'http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:400italic,600italic,400,300,600')
+    link(rel = 'stylesheet', href = '/main.css')
+  body(class = 'secondary-color')
+    header
+      h1 
+        a(href='/', rel='home') Thoughts_
+    section(rel='main')
+      block content
+    footer
+      a(href='https://github.com/johnjones4/Thoughts',target='_blank',title='GitHub Project') GitHub
+      if (user)
+        a(href='/logout',title='Logout of THOUGHTS_') Logout
+    script(type='text/javascript',src='http://code.jquery.com/jquery-1.11.1.min.js')
+    script(type='text/javascript',src='/main.js')

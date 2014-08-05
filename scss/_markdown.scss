@@ -1,0 +1,77 @@
+.markdown {
+  line-height: 1.5em;
+
+  h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 4em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+  h2 {
+    font-size: 3em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+  h3 {
+    font-size: 2.5em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+  h4 {
+    font-size: 2em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+  h5 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+  h6 {
+    font-size: 1.25em;
+    line-height: 1em;
+    margin: 0 0 0.5em;
+  }
+
+  p {
+    font-weight: 400;
+    margin: 0 0 1em 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-style: italic;
+  }
+  ul,ol {
+    padding: 0 0 0 2em;
+    margin: 0 0 1em 0;
+    li {
+      margin: 0 0 0.5em 0;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  ul li {
+    list-style: disc;
+  }
+  ol li {
+    list-style: decimal;
+  }
+
+  code {
+    white-space: pre;
+    padding: 0.25em;
+    background: #eee;
+    display: inline-block;
+    border-radius: 3px;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

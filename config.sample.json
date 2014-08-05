@@ -1,0 +1,16 @@
+{
+  "db": {
+    "path": "."
+  },
+  "express": {
+    "port": 8002,
+    "session_key": "",
+    "memcached_hosts": [
+      "127.0.0.1:11211"
+    ]
+  },
+  "twitter": {
+    "key": "",
+    "secret": ""
+  }
+}
