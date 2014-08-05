@@ -95,7 +95,7 @@ app.post('/thought', function(req,res) {
         if (thought) {
           getQuote(function(quote) {
             res.json({
-              'thought': jade.renderFile('./views/thought.jade',{'thought': thought}),
+              'thought': jade.renderFile(__dirname + '/views/thought.jade',{'thought': thought}),
               'quote': quote
             });
           });
