@@ -1,9 +1,7 @@
 extends main
 
 block content
-  form(method='post',action='/thought',class='thought-form')
-    textarea(name='thought',placeholder=quote,noresize="noresize")
-    input(type='submit', value='Save', class='button')
+  include ./thought-form.jade
   section(class='thoughts')
     each thought in thoughts
       include ./thought.jade

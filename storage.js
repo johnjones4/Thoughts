@@ -106,6 +106,16 @@ Database.prototype.getUserThoughts = function(user,callback) {
   });
 }
 
+Database.prototype.updateThought = function(thought,callback) {
+  this.db.run('UPDATE Thought SET thought = ?, public = ?, category = ? WHERE rowid = ?',[thought.thought,thought['public'],thought.category,thought.rowid],function(err) {
+    if (err) {
+      callback(err,null);
+    } else {
+      callback(null,thought);
+    }
+  });
+}
+
 Database.prototype.prepareThought = function(thought) {
   var date = new Date(thought.created);
   thought.created_formatted = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' @ ' + date.toLocaleTimeString();

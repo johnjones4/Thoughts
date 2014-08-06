@@ -11,4 +11,12 @@ article(class='thought', id=thought.rowid)
   nav(class='links')
     a(href='/thought/'+thought.rowid) Permalink
     a(href='/thought/'+thought.rowid+'/download') Markdown
+    if user && user.uid == thought.uid
+      a(href='/thought/'+thought.rowid+'/access') 
+        | Make&nbsp;
+        if thought.public 
+          | Private
+        else
+          | Public
+      a(href='/thought/'+thought.rowid+'/edit') Edit
   div(class='content markdown') !{thought.thought_formatted}

@@ -1,7 +1,16 @@
 (function($) {
-  $(document).ready(function() {
+  var setTextareaSize = function() {
+    if ($('.thought-form textarea').length > 0) {
+      var h = $(window).height() - ($('header').outerHeight() + $('.thought-form textarea').offset().top + $('.thought-form .controls').outerHeight() + $('.thought-form input[type=submit]').outerHeight());
+      $('.thought-form textarea').css('height',h + 'px');
+    }
+  }
 
-    $('.thought-form').submit(function(event) {
+  $(document).ready(function() {
+    setTextareaSize();
+    $(window).resize(setTextareaSize);
+
+    $('.thought-form.new').submit(function(event) {
       try {event.preventDefault()} catch(e) {}
       var $form = $(this);
       $.ajax({
@@ -31,7 +40,7 @@
       return false;
     });
 
-    $('.thought-form textarea').keyup(function(event) {
+    $('.thought-form.new textarea').keyup(function(event) {
       if (event.keyCode == 13 && event.shiftKey) {
         event.stopPropagation();
         $(this).parents('form').submit();

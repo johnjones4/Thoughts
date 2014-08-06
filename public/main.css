@@ -122,12 +122,12 @@ header {
   right: 0;
   background: rgba(255, 255, 255, 0.8);
   border-bottom: solid 1px rgba(200, 200, 200, 0.5);
-  padding: 1em 0; }
+  padding: 0.5em 0; }
   header h1 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1em;
     letter-spacing: 0.3em; }
     header h1 a {
@@ -142,6 +142,14 @@ footer {
   footer a {
     display: inline-block;
     margin: 0 .1em; }
+
+input[type=text], textarea {
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+  outline: none;
+  display: block;
+  color: #666;
+  border-radius: 3px; }
 
 .button {
   display: block;
@@ -171,7 +179,7 @@ footer {
     color: white; }
 
 section[rel=main] {
-  padding: 7em 5% 0 5%; }
+  padding: 3.5em 1em 0 1em; }
   section[rel=main] .intro {
     max-width: 400px;
     margin: auto;
@@ -183,17 +191,35 @@ section[rel=main] {
   section[rel=main] .thought-form textarea {
     width: 100%;
     height: 15em;
-    box-sizing: border-box;
     font-size: 2em;
     line-height: 1.5em;
-    padding: 1em;
-    font-family: 'Source Code Pro', monospace;
-    border: solid 1px #ccc;
-    outline: none;
-    display: block;
-    margin: 0 0 0.5em 0;
-    color: #666;
-    border-radius: 3px; }
+    padding: 0.5em;
+    font-family: 'Source Code Pro', monospace; }
+  section[rel=main] .thought-form .controls {
+    clear: both;
+    overflow: auto;
+    margin: 0.5em 0; }
+    section[rel=main] .thought-form .controls .category,
+    section[rel=main] .thought-form .controls .public {
+      display: inline-block;
+      float: left; }
+    section[rel=main] .thought-form .controls .category {
+      width: 30%;
+      float: left; }
+      section[rel=main] .thought-form .controls .category label {
+        display: none; }
+      section[rel=main] .thought-form .controls .category input {
+        font-size: 1em;
+        padding: 0.25em;
+        font-family: 'Open Sans', sans-serif;
+        width: 100%; }
+    section[rel=main] .thought-form .controls .public {
+      width: 25%;
+      float: right;
+      text-align: right;
+      margin: 0.5em 0 0 0; }
+  section[rel=main] .thought-form input[type=submit] {
+    clear: both; }
   section[rel=main] .thoughts {
     padding: 1em 0 0 0; }
   section[rel=main] .thought {
@@ -224,3 +250,10 @@ section[rel=main] {
       border: solid 1px #eee;
       border-radius: 3px;
       clear: both; }
+
+@media screen and (max-width: 640px) {
+  section[rel=main] .thought-form textarea {
+    font-size: 1em;
+    line-height: 1.5em; }
+  section[rel=main] .thought-form .controls .category {
+    width: 75%; } }

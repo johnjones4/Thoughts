@@ -26,13 +26,13 @@ header {
   right: 0;
   background: rgba(255,255,255,0.8);
   border-bottom: solid 1px rgba(200,200,200,0.5);
-  padding: 1em 0;
+  padding: 0.5em 0;
 
   h1 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1em;
     letter-spacing: 0.3em;
 
@@ -52,6 +52,15 @@ footer {
     display: inline-block;
     margin: 0 .1em;
   }
+}
+
+input[type=text],textarea {
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+  outline: none;
+  display: block;
+  color: #666;
+  border-radius: 3px;
 }
 
 .button {
@@ -85,7 +94,7 @@ footer {
 }
 
 section[rel=main] {
-  padding: 7em 5% 0 5%;
+  padding: 3.5em 1em 0 1em;
 
   .intro {
     max-width: 400px;
@@ -103,21 +112,45 @@ section[rel=main] {
     textarea {
       width: 100%;
       height: 15em;
-      box-sizing: border-box;
       font-size: 2em;
       line-height: 1.5em;
-      padding: 1em;
+      padding: 0.5em;
       font-family: 'Source Code Pro', monospace;
-      border: solid 1px #ccc;
-      outline: none;
-      display: block;
-      margin: 0 0 0.5em 0;
-      color: #666;
-      border-radius: 3px;
+    }
+
+    .controls {
+      clear: both;
+      overflow: auto;
+      margin: 0.5em 0;
+
+      .category,
+      .public {
+        display: inline-block;
+        float: left;
+      }
+      .category {
+        width: 30%;
+        float: left;
+        label {
+          display: none;
+        }
+        input {
+          font-size: 1em;
+          padding: 0.25em;
+          font-family: 'Open Sans', sans-serif;
+          width: 100%;
+        }
+      }
+      .public {
+        width: 25%;
+        float: right;
+        text-align: right;
+        margin: 0.5em 0 0 0;
+      }
     }
 
     input[type=submit] {
-      
+      clear: both;
     }
   }
 
@@ -159,6 +192,22 @@ section[rel=main] {
       border: solid 1px #eee;
       border-radius: 3px;
       clear: both;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  section[rel=main] {
+    .thought-form {
+      textarea {
+        font-size: 1em;
+        line-height: 1.5em; 
+      }
+      .controls {
+        .category {
+          width: 75%;
+        }
+      }
     }
   }
 }

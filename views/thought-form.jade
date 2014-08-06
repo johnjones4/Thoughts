@@ -1,0 +1,13 @@
+form(method='post',action= thought ? '/thought/'+thought.rowid+'/edit' : '/thought' ,class=thought ? 'thought-form editing' : 'thought-form new')
+  textarea(name='thought',placeholder=quote,noresize="noresize")
+    if thought
+      | #{thought.thought}
+  div(class='controls')
+    div(class='category')
+      label(for='category') Category
+      input(type='text', name='category', placeholder='category', value=thought ? thought.category != 'default' ? thought.category : null : null)
+    div(class='public')
+      label(for='public')
+        input(type='checkbox', name='public', value='public', checked=thought && thought.public ? 'checked' : null)
+        | &nbsp;Public
+  input(type='submit', value='Save', class='button')
