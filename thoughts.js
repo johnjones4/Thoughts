@@ -76,7 +76,8 @@ app.get('/', function(req,res) {
         res.render('thoughts',{
           'user': req.user,
           'quote': quote,
-          'thoughts': thoughts || []
+          'thoughts': thoughts || [],
+          'ga': config.ga
         });
       });
     });
@@ -117,7 +118,8 @@ app.all('/thought/:rowid', function(req,res) {
   handleThoughtReq(req,res,function(thought) {
     res.render('thought-page', {
       'thought': thought,
-      'user': req.user
+      'user': req.user,
+      'ga': config.ga
     });
   });
 });
@@ -137,7 +139,8 @@ app.get('/thought/:rowid/edit', function(req,res) {
         res.render('thought-edit', {
           'quote': '',
           'thought': thought,
-          'user': req.user
+          'user': req.user,
+          'ga': config.ga
         });
       } else { 
         res.send(403);
